@@ -1,6 +1,7 @@
 FROM php:5.6-fpm-alpine
 
-RUN apk add --no-cache bash freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
+RUN apk add shadow && usermod -u 1000 www-data && groupmod -g 1000 www-data \
+    && apk add --no-cache bash freetype libpng libjpeg-turbo freetype-dev libpng-dev libjpeg-turbo-dev \
     && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && docker-php-ext-configure gd \
