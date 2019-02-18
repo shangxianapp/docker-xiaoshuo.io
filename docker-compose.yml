@@ -5,14 +5,14 @@ services:
     container_name: xiaoshuo-mysql
     image: mysql:5.5
     environment:
-        - MYSQL_ROOT_PASSWORD=123qweASD
+      - MYSQL_ROOT_PASSWORD=123qweASD
   php:
     container_name: xiaoshuo-php
     image: shangxianapp/xiaoshuo-php:latest
     build: ./php
     restart: always
     volumes:
-      - ./html:/usr/share/html
+      - "${WWWROOT_DIR}/xiaoshuo.io:/var/www/html"
 
 networks:
   default:
