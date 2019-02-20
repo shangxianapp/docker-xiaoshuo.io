@@ -5,7 +5,7 @@ services:
     container_name: xiaoshuo-mysql
     image: mysql:5.5
     volumes:
-      - ./mysql:/var/lib/mysql
+      - "./mysql:/var/lib/mysql"
     environment:
       - MYSQL_ROOT_PASSWORD=123qweASD
   php:
