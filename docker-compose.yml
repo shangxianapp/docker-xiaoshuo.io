@@ -14,7 +14,7 @@ services:
     build: ./php
     restart: always
     volumes:
-      - "${WWWROOT_DIR}/xiaoshuo.io:/var/www/html"
+      - "${WWWROOT_DIR}/xiaoshuo.io:/usr/share/nginx/html/xiaoshuo.io"
 
 networks:
   default:
